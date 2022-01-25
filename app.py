@@ -49,7 +49,7 @@ fig2.update_layout(width=800, height=800, title = 'Planets in our star system!',
 myheading1 = 'Final Project... it is pretty good'
 tabtitle = 'final project'
 sourceurl = 'https://www.nfl.com/stats/player-stats/'
-githublink = '{insert github link here}'
+githublink = 'https://github.com/moris96/final-project'
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 image1 = 'nagini.jpg'
 
@@ -106,7 +106,7 @@ def render_content(tab):
     prevent_initial_call=True,
 )
 def func(n_clicks):
-    return dcc.send_file(r"C:\Users\mkhou\OneDrive\Desktop\final-project\assets\dragon.png")
+    return dcc.send_file("assets\dragon.png")
 
 
 
