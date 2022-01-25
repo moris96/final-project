@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 
 
 # first tab = plotly NFL stats
-df = pd.read_csv("df = pd.read_csv("data\stats.csv")")
+df = pd.read_csv("data/stats.csv")
 fig1 = px.scatter_3d(df, x='Player', y='TD', z='INT', color='Player')
 
 
