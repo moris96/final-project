@@ -6,15 +6,9 @@ import pandas as pd
 import plotly.express as px
 
 
-
-# first tab
-df = pd.read_csv(r"C:\Users\mkhou\OneDrive\Desktop\pythonProject\data\stats.csv")
+# first tab info
+df = pd.read_csv(r"C:\Users\mkhou\OneDrive\Desktop\final-project\data\stats.csv")
 fig1 = px.scatter_3d(df, x='Player', y='TD', z='INT', color='Player')
-
-# second tab is done
-
-# third tab = upload images
-
 
 
 # layout stuff
@@ -37,8 +31,7 @@ app.layout = html.Div([
     html.Img(src=app.get_asset_url(image1)),
     dcc.Tabs(id="tabs-example-graph", value='tab-1-example-graph', children=[
         dcc.Tab(label='Plotly in 3d!', value='tab-1-example-graph'),
-        dcc.Tab(label='A random button', value='tab-2-example-graph'),
-        dcc.Tab(label='Download an image', value='tab-3-example-graph'),
+        dcc.Tab(label='Download an image', value='tab-2-example-graph'),
 
     ]),
 
@@ -57,22 +50,11 @@ app.layout = html.Div([
 def render_content(tab):
     if tab == 'tab-1-example-graph':
         return html.Div([
-            html.H3('Top 10 NFL QB Stats'),
+            html.H3('NFL QB stats for 2021'),
             dcc.Graph(figure=fig1)
         ])
-    elif tab == 'tab-2-example-graph':
-        return html.Div([
-            html.H3('Click the button!'),
-            dcc.ConfirmDialogProvider(
-                children=html.Button(
-                    'Click Me Bro!'
-                ),
-                id='danger-danger',
-                message='Danger!!! Continue at your own risk bro! DO NOT press "OK" unless your computer has a death wish!'
-            )
-        ])
 
-    elif tab == 'tab-3-example-graph':
+    elif tab == 'tab-2-example-graph':
         return html.Div([
             html.Button("Download Image", id="btn_image"), dcc.Download(id="download-image")
         ])
@@ -82,7 +64,7 @@ def render_content(tab):
     prevent_initial_call=True,
 )
 def func(n_clicks):
-    return dcc.send_file(r"C:\Users\mkhou\OneDrive\Desktop\pythonProject\assets\dragon.png")
+    return dcc.send_file(r"C:\Users\mkhou\OneDrive\Desktop\final-project\assets\dragon.png")
 
 
 
